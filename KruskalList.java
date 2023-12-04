@@ -8,7 +8,7 @@ public class KruskalList {
         int weight;
         ENode nextEdge;
     }
-    
+
     private class VNode {
         char data;
         ENode firstEdge;
@@ -147,7 +147,7 @@ public class KruskalList {
 
         return ch;
     }
-    
+
     private int readInt() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
@@ -194,11 +194,11 @@ public class KruskalList {
             if (!visited[i]) {
                 visited[i] = true;
                 System.out.printf("%c ", mVexs[i].data);
-                queue[rear++] = i;  // 入队列
+                queue[rear++] = i;  //
             }
 
             while (head != rear) {
-                int j = queue[head++];  // 出队列
+                int j = queue[head++];  //
                 ENode node = mVexs[j].firstEdge;
                 while (node != null) {
                     int k = node.ivex;
@@ -215,9 +215,8 @@ public class KruskalList {
         System.out.printf("\n");
     }
 
-    /*
-     * 打印矩阵队列图
-     */
+
+
     public void print() {
         System.out.printf("List Graph:\n");
         for (int i = 0; i < mVexs.length; i++) {
@@ -230,10 +229,7 @@ public class KruskalList {
             System.out.printf("\n");
         }
     }
-
-    /*
-     * 获取边<start, end>的权值；若start和end不是连通的，则返回无穷大。
-     */
+    
     private int getWeight(int start, int end) {
 
         if (start == end)
@@ -431,4 +427,3 @@ public class KruskalList {
         pG.kruskal();
     }
 }
-
